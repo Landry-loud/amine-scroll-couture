@@ -307,16 +307,21 @@ function Atelier() {
               eye: "— Philosophie",
               h: "La mode, comme une conversation discrète.",
               p: "Amine la Cantine n'est pas une enseigne. C'est un lieu, une sélection, un regard. Chaque pièce y arrive parce qu'elle mérite d'y être — pas parce qu'une saison l'a décidé.",
+              img: null as string | null,
             },
             {
               eye: "— Sélection",
               h: "Matières d'abord. Le reste suit.",
               p: "Laine peignée, lin lavé, coton long, cuir tanné en Méditerranée. On choisit la matière avant la marque, la coupe avant la signature, le geste avant l'étiquette.",
+              img: selectionImg,
+              alt: "Matières premium sélectionnées — laine, lin, cuir",
             },
             {
               eye: "— Hydra",
               h: "Un atelier au cœur d'Alger.",
               p: "Au 38 Chemin de la Madeleine, derrière une porte sans enseigne, l'espace s'ouvre comme un appartement. On y vient pour essayer, pour parler, pour ne rien acheter aussi.",
+              img: hydraImg,
+              alt: "Rue d'Hydra, Alger",
             },
           ].map((b) => (
             <motion.div
@@ -329,6 +334,16 @@ function Atelier() {
               <span className="eyebrow text-background/60">{b.eye}</span>
               <h3 className="mt-6 font-display text-4xl md:text-5xl font-bold leading-[1.05] text-balance">{b.h}</h3>
               <p className="mt-8 text-base md:text-lg leading-relaxed text-background/70 max-w-md">{b.p}</p>
+              {b.img && (
+                <div className="mt-10 overflow-hidden aspect-[4/5] max-w-md">
+                  <img
+                    src={b.img}
+                    alt={b.alt ?? ""}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
