@@ -56,6 +56,7 @@ function Index() {
       <Nav />
       <Hero />
       <Collection />
+      <CatalogueTeaser />
       <Atelier />
       <Info />
       <Footer />
