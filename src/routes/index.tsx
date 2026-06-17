@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
 import { Instagram, MapPin, Phone, Clock, ArrowUpRight, ArrowRight } from "lucide-react";
@@ -11,6 +11,14 @@ import p4 from "@/assets/p4.jpg";
 import p5 from "@/assets/p5.jpg";
 import p6 from "@/assets/p6.jpg";
 import atelier from "@/assets/atelier.jpg";
+import c1 from "@/assets/c1.jpg";
+import c3 from "@/assets/c3.jpg";
+import c5 from "@/assets/c5.jpg";
+import c6 from "@/assets/c6.jpg";
+import c9 from "@/assets/c9.jpg";
+import c11 from "@/assets/c11.jpg";
+
+const teaserShots = [c11, c1, c3, c5, c9, c6];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -48,6 +56,7 @@ function Index() {
       <Nav />
       <Hero />
       <Collection />
+      <CatalogueTeaser />
       <Atelier />
       <Info />
       <Footer />
@@ -63,6 +72,7 @@ function Nav() {
           A·L·C
         </a>
         <nav className="hidden md:flex items-center gap-10 text-xs tracking-[0.25em] uppercase font-medium">
+          <Link to="/catalogue" className="hover-accent">Catalogue</Link>
           <a href="#collection" className="hover-accent">Collection</a>
           <a href="#atelier" className="hover-accent">Atelier</a>
           <a href="#visit" className="hover-accent">Visiter</a>
@@ -224,11 +234,53 @@ function Collection() {
         ))}
       </div>
 
-      <div className="mt-24 text-center">
+      <div className="mt-24 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <Link to="/catalogue" className="btn-line">
+          Voir le catalogue complet
+          <ArrowRight className="h-3 w-3" strokeWidth={1.5} />
+        </Link>
         <a href="#visit" className="btn-line">
           Voir en boutique
-          <ArrowRight className="h-3 w-3" strokeWidth={1.5} />
         </a>
+      </div>
+    </section>
+  );
+}
+
+function CatalogueTeaser() {
+  return (
+    <section className="relative bg-foreground text-background overflow-hidden py-24 md:py-32">
+      <div className="px-6 md:px-10 mb-12 md:mb-16 max-w-7xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+        <div className="max-w-2xl">
+          <span className="eyebrow text-background/60">— Catalogue</span>
+          <h2 className="mt-6 font-display text-5xl md:text-7xl font-bold leading-[0.95] text-balance">
+            Toute la sélection,<br />
+            <em className="italic font-normal">en un seul endroit.</em>
+          </h2>
+        </div>
+        <Link to="/catalogue" className="btn-line text-background self-start md:self-auto">
+          Parcourir le catalogue
+          <ArrowRight className="h-3 w-3" strokeWidth={1.5} />
+        </Link>
+      </div>
+      <div className="flex gap-4 md:gap-6 px-6 md:px-10 overflow-x-auto pb-4 scrollbar-none">
+        {teaserShots.map((src, i) => (
+          <Link
+            key={i}
+            to="/catalogue"
+            className="group relative shrink-0 w-[70vw] sm:w-[40vw] md:w-[28vw] lg:w-[22vw] aspect-[4/5] overflow-hidden bg-background/10"
+          >
+            <img
+              src={src}
+              alt=""
+              loading="lazy"
+              className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-[1.05]"
+            />
+            <span className="absolute bottom-4 left-4 text-[10px] tracking-[0.3em] uppercase opacity-0 group-hover:opacity-100 transition-opacity">
+              N° {String(i + 1).padStart(2, "0")}
+            </span>
+          </Link>
+        ))}
       </div>
     </section>
   );
