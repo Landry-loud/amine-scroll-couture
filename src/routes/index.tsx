@@ -18,6 +18,9 @@ import c6 from "@/assets/c6.jpg";
 import c9 from "@/assets/c9.jpg";
 import c11 from "@/assets/c11.jpg";
 
+import selectionImg from "@/assets/selection.jpg";
+import hydraImg from "@/assets/hydra.jpg";
+
 const teaserShots = [c11, c1, c3, c5, c9, c6];
 
 export const Route = createFileRoute("/")({
