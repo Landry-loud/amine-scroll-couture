@@ -58,14 +58,27 @@ function CataloguePage() {
         </div>
       </header>
 
-      <section className="px-6 md:px-10 pt-16 md:pt-24 pb-10 md:pb-16 max-w-7xl mx-auto">
-        <span className="eyebrow">— Catalogue · Saison Courante</span>
-        <h1 className="mt-6 font-display text-5xl md:text-7xl font-bold leading-[0.95] text-balance max-w-4xl">
-          Toute la sélection, <em className="italic font-normal">pièce par pièce.</em>
-        </h1>
-        <p className="mt-8 max-w-md text-sm leading-relaxed text-muted-foreground">
-          Disponible en boutique à Hydra. Pour vérifier les tailles et la disponibilité, appelez-nous ou passez nous voir.
-        </p>
+      <section className="grid md:grid-cols-2 gap-10 md:gap-16 px-6 md:px-10 pt-16 md:pt-24 pb-12 md:pb-20 max-w-7xl mx-auto items-end">
+        <div>
+          <span className="eyebrow">— Catalogue · Saison Courante</span>
+          <h1 className="mt-6 font-display text-5xl md:text-7xl font-bold leading-[0.95] text-balance">
+            Toute la sélection, <em className="italic font-normal">pièce par pièce.</em>
+          </h1>
+          <p className="mt-8 max-w-md text-sm leading-relaxed text-muted-foreground">
+            Disponible en boutique à Hydra. Pour vérifier les tailles et la disponibilité, appelez-nous ou passez nous voir.
+          </p>
+        </div>
+        <div className="relative overflow-hidden aspect-[4/5] md:aspect-[3/4] bg-muted">
+          <img
+            src={catalogueHero}
+            alt="Lookbook Amine la Cantine — silhouette dans les rues d'Hydra, Alger"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <span className="absolute bottom-4 left-4 right-4 flex items-end justify-between text-[10px] tracking-[0.3em] uppercase text-white">
+            <span>Lookbook · AH 26</span>
+            <span>Hydra · Alger</span>
+          </span>
+        </div>
       </section>
 
       <div className="sticky top-0 z-30 bg-background/95 backdrop-blur border-y border-border">
