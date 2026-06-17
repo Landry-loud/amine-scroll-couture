@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { ArrowLeft, X } from "lucide-react";
 
 import { catalogue, categories, formatPrice, type Category, type Product } from "@/lib/catalogue";
+import catalogueHero from "@/assets/catalogue-hero.jpg";
 
 export const Route = createFileRoute("/catalogue")({
   head: () => ({
