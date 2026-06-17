@@ -63,6 +63,7 @@ function Nav() {
           A·L·C
         </a>
         <nav className="hidden md:flex items-center gap-10 text-xs tracking-[0.25em] uppercase font-medium">
+          <Link to="/catalogue" className="hover-accent">Catalogue</Link>
           <a href="#collection" className="hover-accent">Collection</a>
           <a href="#atelier" className="hover-accent">Atelier</a>
           <a href="#visit" className="hover-accent">Visiter</a>
