@@ -11,6 +11,14 @@ import p4 from "@/assets/p4.jpg";
 import p5 from "@/assets/p5.jpg";
 import p6 from "@/assets/p6.jpg";
 import atelier from "@/assets/atelier.jpg";
+import c1 from "@/assets/c1.jpg";
+import c3 from "@/assets/c3.jpg";
+import c5 from "@/assets/c5.jpg";
+import c6 from "@/assets/c6.jpg";
+import c9 from "@/assets/c9.jpg";
+import c11 from "@/assets/c11.jpg";
+
+const teaserShots = [c11, c1, c3, c5, c9, c6];
 
 export const Route = createFileRoute("/")({
   head: () => ({
